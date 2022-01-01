@@ -10,12 +10,20 @@
 </head>
 <body>
     <div class="header">Welcome to Etch-A-Sketch Game</div>
-    <div style="width : 100% ;text-align:center"><button id="reset">Reset</button></div>
     <div class="container">
+        <div class="controls">
+            <button id="reset" >Reset</button>
+            <button id="rainbow">Rainbow</button>
+            <button id="shadding">Shadding</button>
+        </div>
         <div class='test'>
             <div class="grid">
             
             </div>
+        </div>
+        <div>
+            <input type="range" value='20' min='1' max='100' id="slider">
+            <div class="grid-size">20 x 20</div>
         </div>
         
     </div>

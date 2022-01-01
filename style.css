@@ -10,7 +10,6 @@ body {
     background-color: darkgray;
 }
 
-
 button {
     border-radius: 10px;
     width: 100px;
@@ -19,6 +18,10 @@ button {
 
 }
 
+.controls {
+    display: flex;
+    flex-direction: column;
+}
 
 .test {
     border: 5px solid black;
@@ -26,14 +29,16 @@ button {
 
 .grid {
     display: grid;
-    height: 200px;
-    width: 200px;
-    background-color: white;
+    height: 400px;
+    width: 400px;
+    background-color: rgb(255, 255, 255);
+    /* color: rgb(212, 97, 97); */
+    
     /* /border: 2px solid black; */
 }
 .container {
     display: flex;
-    justify-content: center;
+    justify-content:space-evenly;
     align-items: center;
     flex: 1;
     
