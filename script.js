@@ -43,7 +43,6 @@ function getShadeColor(event){
     if(event.target.style.backgroundColor === "")
         return "rgb(255,255,255)";
     let divColors = event.target.style.backgroundColor.match(/[\d]+/g);
-    console.log("getShadeCOlor : " + event.target.style.backgroundColor);
     let newColors = divColors.map(item => Number.parseInt(item) - 10);
     return "rgb(" + `${newColors[0]},${newColors[1]},${newColors[2]}` + ")";
     
@@ -61,9 +60,8 @@ function getRandomColor(){
 }
 
 function doReset(){
-    
+    slider.value = 5;
     generateGridDivs(5);
-    
 
 };
 
@@ -74,7 +72,6 @@ function changeColor(e){
 function generateGridDivs(gridSize){
     gridSizeDiv.textContent = `${gridSize} x ${gridSize}`;
     grid.textContent = '';
-    console.log("generateGridDiv : ", gridSize);
     grid.setAttribute("style",`grid-template-columns: repeat(${gridSize}, 1fr);`)
     for(i = 1; i <= gridSize*gridSize ; i++){
         const div = document.createElement('div');
@@ -85,11 +82,8 @@ function generateGridDivs(gridSize){
 };
 
 function generateGridDivsOnchange(event){
-    console.log("Onchange : : " + event.target.value);
-    //let txt = 
     generateGridDivs(event.target.value);
 };
 
 
-// console.log(grid.style.gridTemplateColumns)
 
