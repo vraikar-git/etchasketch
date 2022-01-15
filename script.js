@@ -61,6 +61,7 @@ function getRandomColor(){
 
 function doReset(){
     slider.value = 5;
+    mode = 0;
     generateGridDivs(5);
 
 };
