@@ -6,6 +6,8 @@ const gridSizeDiv = document.querySelector(".grid-size")
 let mode = 0;  // 1 : random color, 0 : balck and white 2: shadding
 let number = 5;
 
+
+
 btns.forEach((btn) => btn.addEventListener('click',controls));
 grid.addEventListener('mouseover',changeColor);
 slider.addEventListener('input', generateGridDivsOnchange);
@@ -44,7 +46,7 @@ function getShadeColor(event){
         return "rgb(255,255,255)";
     let divColors = event.target.style.backgroundColor.match(/[\d]+/g);
     let newColors = divColors.map(item => Number.parseInt(item) - 10);
-    return "rgb(" + `${newColors[0]},${newColors[1]},${newColors[2]}` + ")";
+    return "rgba(" + `${newColors[0]},${newColors[1]},${newColors[2]}` + ")";
     
     
 }
@@ -53,7 +55,7 @@ function getShadeColor(event){
 function getRandomColor(){
     const letters = '0123456789ABCDEF';
     let color = '#';
-    for(i = 0; i < 6; i++){
+    for(i = 0; i < 8; i++){
         color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
@@ -68,6 +70,7 @@ function doReset(){
 
 function changeColor(e){
     e.target.setAttribute("style",`background-color:${getColor(mode,e)}`);
+   
 }
 
 function generateGridDivs(gridSize){
